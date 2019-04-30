@@ -1,94 +1,94 @@
 {
     "@context": {
-      "@base": "http://www.purl.org/dto#",
-      "@vocab": "http://www.purl.org/dto#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "defines": { "@reverse": "rdfs:isDefinedBy" },
-    "domain": {"@id":"rdfs:domain","@type":"@id"},
-    "range": {"@id":"rdfs:range","@type":"@id"},
-    "subClassOf": {"@id":"rdfs:subClassOf","@type":"@id"}
+	"@base": "http://www.purl.org/dto#",
+	"@vocab": "http://www.purl.org/dto#",
+	"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+	"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+	"owl": "http://www.w3.org/2002/07/owl#",
+	"defines": { "@reverse": "rdfs:isDefinedBy" },
+	"domain": {"@id":"rdfs:domain","@type":"@id"},
+	"range": {"@id":"rdfs:range","@type":"@id"},
+	"subClassOf": {"@id":"rdfs:subClassOf","@type":"@id"}
     },
     "@id": "",
     "@type": "owl:Ontology",
     "defines": [{
-  "@id": "Term",
-  "@type": "owl:Class"
+	"@id": "Term",
+	"@type": "owl:Class"
     },{
-  "@id": "Variable",
-  "@type": "owl:Class",
-  "subClassOf": "#Term"
+	"@id": "Variable",
+	"@type": "owl:Class",
+	"subClassOf": "#Term"
     },{
-  "@id": "Constant",
-  "@type": "owl:Class",
-  "subClassOf": "#Term"
+	"@id": "Constant",
+	"@type": "owl:Class",
+	"subClassOf": "#Term"
     },{
-  "@id": "Sort",
-  "@type": "owl:Class",
-  "subClassOf": "#Term"
+	"@id": "Sort",
+	"@type": "owl:Class",
+	"subClassOf": "#Term"
     },{
-  "@id": "Set",
-  "@type": "owl:Class",
-  "subClassOf": "#Sort"
+	"@id": "Set",
+	"@type": "owl:Class",
+	"subClassOf": "#Sort"
     },{
-  "@id": "Prop",
-  "@type": "owl:Class",
-  "subClassOf": "#Sort"
+	"@id": "Prop",
+	"@type": "owl:Class",
+	"subClassOf": "#Sort"
     },{
-  "@id": "Product",
-  "@type": "owl:Class",
-  "subClassOf": "#Term"
+	"@id": "Product",
+	"@type": "owl:Class",
+	"subClassOf": "#Term"
     },{
-  "@id": "Lambda",
-  "@type": "owl:Class",
-  "subClassOf": "#Term"
+	"@id": "Lambda",
+	"@type": "owl:Class",
+	"subClassOf": "#Term"
     },{
-  "@id": "Application",
-  "@type": "owl:Class",
-  "subClassOf": "#Term"
+	"@id": "Application",
+	"@type": "owl:Class",
+	"subClassOf": "#Term"
     },{
-  "@id": "binder",
-  "@type": "owl:ObjectProperty",
-  "domain": "Lambda or Product",
-  "range": "#Variable"
+	"@id": "binder",
+	"@type": "owl:ObjectProperty",
+	"domain": "Lambda or Product",
+	"range": "#Variable"
     },{
-  "@id": "domain",
-  "@type": "owl:ObjectProperty",
-  "domain": "Lambda or Product",
-  "range": "Term"
+	"@id": "domain",
+	"@type": "owl:ObjectProperty",
+	"domain": "Lambda or Product",
+	"range": "Term"
     },{
-  "@id": "codomain",
-  "@type": "owl:ObjectProperty",
-  "domain": "Product",
-  "range": "Term"
+	"@id": "codomain",
+	"@type": "owl:ObjectProperty",
+	"domain": "Product",
+	"range": "Term"
     },{
-  "@id": "body",
-  "@type": "owl:ObjectProperty",
-  "domain": "Lambda",
-  "range": "Term"
+	"@id": "body",
+	"@type": "owl:ObjectProperty",
+	"domain": "Lambda",
+	"range": "Term"
     },{
-  "@id": "head",
-  "@type": "owl:ObjectProperty",
-  "domain": "Application",
-  "range": "Term"
+	"@id": "head",
+	"@type": "owl:ObjectProperty",
+	"domain": "Application",
+	"range": "Term"
     },{
-  "@id": "argument",
-  "@type": "owl:ObjectProperty",
-  "domain": "Application",
-  "range": "Term"
+	"@id": "argument",
+	"@type": "owl:ObjectProperty",
+	"domain": "Application",
+	"range": "Term"
     },{
-  "@id": "universe",
-  "@type": "owl:DatatypeProperty",
-  "domain": "Sort",
-  "range": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+	"@id": "universe",
+	"@type": "owl:DatatypeProperty",
+	"domain": "Sort",
+	"range": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },{
-  "@id": "sorts/Set",
-  "@type": "Set",
-      "#universe": "0"
+	"@id": "sorts/Set",
+	"@type": "Set",
+	"#universe": "0"
     },{
-  "@id": "sorts/Prop",
-  "@type": "Prop",
-      "#universe": "0"
+	"@id": "sorts/Prop",
+	"@type": "Prop",
+	"#universe": "0"
     }]
 }
