@@ -1,7 +1,7 @@
 {
     "@context": {
-      "@base": "http://www.purl.org/dto",
-      "@vocab": "http://www.purl.org/dto",
+      "@base": "http://purl.org/dto#",
+      "@vocab": "http://purl.org/dto#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "owl": "http://www.w3.org/2002/07/owl#",
@@ -10,85 +10,85 @@
     "range": {"@id":"rdfs:range","@type":"@id"},
     "subClassOf": {"@id":"rdfs:subClassOf","@type":"@id"}
     },
-    "@id": "https://json-ld.org/playground/",
+    "@id": "",
     "@type": "owl:Ontology",
     "defines": [{
-  "@id": "#Term",
+  "@id": "Term",
   "@type": "owl:Class"
     },{
-  "@id": "#Variable",
+  "@id": "Variable",
   "@type": "owl:Class",
   "subClassOf": "#Term"
     },{
-  "@id": "#Constant",
+  "@id": "Constant",
   "@type": "owl:Class",
   "subClassOf": "#Term"
     },{
-  "@id": "#Sort",
+  "@id": "Sort",
   "@type": "owl:Class",
   "subClassOf": "#Term"
     },{
-  "@id": "#Set",
+  "@id": "Set",
   "@type": "owl:Class",
   "subClassOf": "#Sort"
     },{
-  "@id": "#Prop",
+  "@id": "Prop",
   "@type": "owl:Class",
   "subClassOf": "#Sort"
     },{
-  "@id": "#Product",
+  "@id": "Product",
   "@type": "owl:Class",
   "subClassOf": "#Term"
     },{
-  "@id": "#Lambda",
+  "@id": "Lambda",
   "@type": "owl:Class",
   "subClassOf": "#Term"
     },{
-  "@id": "#Application",
+  "@id": "Application",
   "@type": "owl:Class",
   "subClassOf": "#Term"
     },{
-  "@id": "#binder",
+  "@id": "binder",
   "@type": "owl:ObjectProperty",
   "domain": "Lambda or Product",
   "range": "#Variable"
     },{
-  "@id": "#domain",
+  "@id": "domain",
   "@type": "owl:ObjectProperty",
   "domain": "Lambda or Product",
-  "range": "#Term"
+  "range": "Term"
     },{
-  "@id": "#codomain",
+  "@id": "codomain",
   "@type": "owl:ObjectProperty",
-  "domain": "#Product",
-  "range": "#Term"
+  "domain": "Product",
+  "range": "Term"
     },{
-  "@id": "#body",
+  "@id": "body",
   "@type": "owl:ObjectProperty",
-  "domain": "#Lambda",
-  "range": "#Term"
+  "domain": "Lambda",
+  "range": "Term"
     },{
-  "@id": "#head",
+  "@id": "head",
   "@type": "owl:ObjectProperty",
-  "domain": "#Term",
-  "range": "#Term"
+  "domain": "Application",
+  "range": "Term"
     },{
-  "@id": "#argument",
+  "@id": "argument",
   "@type": "owl:ObjectProperty",
-  "domain": "#Term",
-  "range": "#Term"
+  "domain": "Application",
+  "range": "Term"
     },{
-  "@id": "#universe",
+  "@id": "universe",
   "@type": "owl:DatatypeProperty",
-  "domain": "#Sort",
+  "domain": "Sort",
   "range": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },{
   "@id": "sorts/Set",
-  "@type": "#Set",
+  "@type": "Set",
       "#universe": "0"
     },{
   "@id": "sorts/Prop",
-  "@type": "#Prop",
+  "@type": "Prop",
       "#universe": "0"
     }]
 }
