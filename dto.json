@@ -8,7 +8,8 @@
 	"defines": { "@reverse": "rdfs:isDefinedBy" },
 	"domain": {"@id":"rdfs:domain","@type":"@id"},
 	"range": {"@id":"rdfs:range","@type":"@id"},
-	"subClassOf": {"@id":"rdfs:subClassOf","@type":"@id"}
+	"subClassOf": {"@id":"rdfs:subClassOf","@type":"@id"},
+	"owl:unionOf": {"@type":"@id"}
     },
     "@id": "",
     "@type": "owl:Ontology",
@@ -48,49 +49,39 @@
 	"@type": "owl:Class",
 	"subClassOf": "Term"
     },{
-	"@id": "lambdaBinder",
+	"@id": "binder",
 	"@type": "owl:ObjectProperty",
-	"domain": "Lambda",
+	"rdfs:domain": {"owl:unionOf": {"@list": ["Lambda","Product"]}},
 	"range": "Variable"
     },{
-	"@id": "productBinder",
+	"@id": "domain",
 	"@type": "owl:ObjectProperty",
-	"domain": "Product",
-	"range": "Variable"
-    },{
-	"@id": "lambdaDomain",
-	"@type": "owl:ObjectProperty",
-	"domain": "Lambda",
+	"rdfs:domain": {"owl:unionOf": {"@list": ["Lambda","Product"]}},,
 	"range": "Term"
     },{
-	"@id": "productDomain",
+	"@id": "codomain",
 	"@type": "owl:ObjectProperty",
-	"domain": "Lambda",
+	"rdfs:domain": "Product",
 	"range": "Term"
     },{
-	"@id": "productCodomain",
+	"@id": "body",
 	"@type": "owl:ObjectProperty",
-	"domain": "Product",
-	"range": "Term"
-    },{
-	"@id": "lambdaBody",
-	"@type": "owl:ObjectProperty",
-	"domain": "Lambda",
+	"rdfs:domain": "Lambda",
 	"range": "Term"
     },{
 	"@id": "head",
 	"@type": "owl:ObjectProperty",
-	"domain": "Application",
+	"rdfs:domain": "Application",
 	"range": "Term"
     },{
 	"@id": "argument",
 	"@type": "owl:ObjectProperty",
-	"domain": "Application",
+	"rdfs:domain": "Application",
 	"range": "Term"
     },{
 	"@id": "universe",
 	"@type": "owl:DatatypeProperty",
-	"domain": "Sort",
+	"rdfs:domain": "Sort",
 	"range": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },{
 	"@id": "sorts/Set",
