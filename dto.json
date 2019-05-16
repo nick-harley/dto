@@ -18,52 +18,62 @@
     },{
 	"@id": "Variable",
 	"@type": "owl:Class",
-	"subClassOf": "#Term"
+	"subClassOf": "Term"
     },{
 	"@id": "Constant",
 	"@type": "owl:Class",
-	"subClassOf": "#Term"
+	"subClassOf": "Term"
     },{
 	"@id": "Sort",
 	"@type": "owl:Class",
-	"subClassOf": "#Term"
+	"subClassOf": "Term"
     },{
 	"@id": "Set",
 	"@type": "owl:Class",
-	"subClassOf": "#Sort"
+	"subClassOf": "Sort"
     },{
 	"@id": "Prop",
 	"@type": "owl:Class",
-	"subClassOf": "#Sort"
+	"subClassOf": "Sort"
     },{
 	"@id": "Product",
 	"@type": "owl:Class",
-	"subClassOf": "#Term"
+	"subClassOf": "Term"
     },{
 	"@id": "Lambda",
 	"@type": "owl:Class",
-	"subClassOf": "#Term"
+	"subClassOf": "Term"
     },{
 	"@id": "Application",
 	"@type": "owl:Class",
-	"subClassOf": "#Term"
+	"subClassOf": "Term"
     },{
-	"@id": "binder",
+	"@id": "lambdaBinder",
 	"@type": "owl:ObjectProperty",
-	"domain": "Lambda or Product",
-	"range": "#Variable"
+	"domain": "Lambda",
+	"range": "Variable"
     },{
-	"@id": "domain",
+	"@id": "productBinder",
 	"@type": "owl:ObjectProperty",
-	"domain": "Lambda or Product",
+	"domain": "Product",
+	"range": "Variable"
+    },{
+	"@id": "lambdaDomain",
+	"@type": "owl:ObjectProperty",
+	"domain": "Lambda",
 	"range": "Term"
     },{
-	"@id": "codomain",
+	"@id": "productDomain",
+	"@type": "owl:ObjectProperty",
+	"domain": "Lambda",
+	"range": "Term"
+    },{
+	"@id": "productCodomain",
 	"@type": "owl:ObjectProperty",
 	"domain": "Product",
 	"range": "Term"
     },{
-	"@id": "body",
+	"@id": "lambdaBody",
 	"@type": "owl:ObjectProperty",
 	"domain": "Lambda",
 	"range": "Term"
@@ -85,10 +95,10 @@
     },{
 	"@id": "sorts/Set",
 	"@type": "Set",
-	"#universe": "0"
+	"universe": "0"
     },{
 	"@id": "sorts/Prop",
 	"@type": "Prop",
-	"#universe": "0"
+	"universe": "0"
     }]
 }
